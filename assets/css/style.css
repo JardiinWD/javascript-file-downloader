@@ -50,6 +50,31 @@ form input {
     padding: 0 18px;
 }
 
+form button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #4285f4;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* 
+Praticamente, nel momento in cui viene incollato un Linke all'interno
+dell'input, il bottone, tramite tilde, cambia le sue proprietà. dev'essere per forza
+un button 
+*/
+form input:valid ~ button {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /*#endregion */
 
 /*#endregion */
