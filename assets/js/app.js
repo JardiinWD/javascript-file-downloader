@@ -26,10 +26,9 @@ function fetchFile(url) {
         let tempUrl = URL.createObjectURL(file)
         console.log(tempUrl);
         let aTag = document.createElement("a") // Ancor tag aggiunto 
-        /* Ora verifico se effettivamente il file non è un'immagine o un PDF  */
         aTag.href = tempUrl // al nostro ancor tag passo l'attributo href (come solito)
-        aTag.download = url.replace(/^.*[\\\/]/, '') /* Questo dovrebbe funzionare ma dipende dal gestore del sito in cui scarichi se ti da la possibilità di farlo. E' il nome del file dinamico */
-        /* aTag.download = "filename" */ // passo al mio ancor tag l'attributo download con il nome che ha in rete rimuovendo le estensioni 
+        aTag.download = url.replace(/^.*[\\\/]/, '') /*Questo dovrebbe funzionare ma dipende dal gestore del sito in cui scarichi se ti da la possibilità di farlo. E' il nome del file dinamico */
+        /* aTag.download = "filename" */ /* url.replace(/^.[\\\/]/, '') */ // passo al mio ancor tag l'attributo download con il nome che ha in rete rimuovendo le estensioni 
         document.body.appendChild(aTag) // al corpo del documento viene appeso l'ancor Tag
         aTag.click(); // cliccando sull'Ancor tag scarico il mio documento
         aTag.remove(); // una volta scaricato il tag si rimuove dallo storico rimuovendo la possibilità di scaricare
